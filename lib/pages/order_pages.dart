@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_food_delivery_app/widgets/order_cart.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'signIn_page.dart';
+
 class OrdersPage extends StatefulWidget {
   @override
   _OrdersPagesState createState() => _OrdersPagesState();
@@ -103,20 +105,25 @@ class _OrdersPagesState extends State<OrdersPage> {
               )
             ],
           ),
-          Container(
-            margin: EdgeInsets.only(top: 40.0),
-            height: 50.0,
-            width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
-                color: Colors.blue, borderRadius: BorderRadius.circular(20.0)),
-            child: Center(
-                child: Text(
-              "Proceed to checkout",
-              style: GoogleFonts.ubuntu(
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white),
-            )),
+          GestureDetector(
+            onTap: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>SignInPage()));
+            },
+            child: Container(
+              margin: EdgeInsets.only(top: 40.0),
+              height: 50.0,
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                  color: Colors.blue, borderRadius: BorderRadius.circular(20.0)),
+              child: Center(
+                  child: Text(
+                "Proceed to checkout",
+                style: GoogleFonts.ubuntu(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
+              )),
+            ),
           )
         ],
       ),

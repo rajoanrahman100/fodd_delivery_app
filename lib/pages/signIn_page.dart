@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'signup_page.dart';
+
 class SignInPage extends StatefulWidget {
   @override
   _SignInPageState createState() => _SignInPageState();
@@ -143,11 +145,16 @@ class _SignInPageState extends State<SignInPage> {
                 SizedBox(
                   width: 3.0,
                 ),
-                Text("Sign Up",style: GoogleFonts.ubuntu(
-                    color: Colors.blue,
-                  fontWeight: FontWeight.bold,
-                    fontSize: 16.0
-                ),)
+                GestureDetector(
+                  onTap: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>SignUp()));
+                  },
+                  child: Text("Sign Up",style: GoogleFonts.ubuntu(
+                      color: Colors.blue,
+                    fontWeight: FontWeight.bold,
+                      fontSize: 16.0
+                  ),),
+                )
               ],
             )
           ],
